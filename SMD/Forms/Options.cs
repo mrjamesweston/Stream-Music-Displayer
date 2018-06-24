@@ -156,35 +156,5 @@ namespace SMD
 
         private void updatesBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string ver;
-
-                var webRequest = WebRequest.Create(@"https://dl.dropboxusercontent.com/u/37497632/SMD/ver.txt");
-                using (var response = webRequest.GetResponse())
-                using (var content = response.GetResponseStream())
-                using (var reader = new StreamReader(content))
-                {
-                    ver = reader.ReadToEnd();
-                }
-
-                if (ver != Assembly.GetExecutingAssembly().GetName().Version.ToString())
-                {
-                    if (MessageBox.Show("A new update is avalible! You have '" + Assembly.GetExecutingAssembly().GetName().Version.ToString()  + "'. Version '" + ver + "' is avalible. Would you like to download it?") == System.Windows.Forms.DialogResult.OK)
-                    {
-                        var webRequest2 = WebRequest.Create(@"https://dl.dropboxusercontent.com/u/37497632/SMD/dl.txt");
-                        using (var response = webRequest2.GetResponse())
-                        using (var content = response.GetResponseStream())
-                        using (var reader = new StreamReader(content))
-                        {
-                            Process.Start(reader.ReadToEnd());
-                        }
-                    }
-
-                }
-                else { MessageBox.Show("You're Up To Date!"); }
-            }
-            catch (Exception ex) { MessageBox.Show("Unable to check for update."); }
+            AutoUpdater.Start("http://rbsoft.org/updates/AutoUpdaterTest.xml");
         }
-    }
-}

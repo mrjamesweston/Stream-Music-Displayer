@@ -53,7 +53,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.infolb = new System.Windows.Forms.Label();
             this.playerLink = new System.Windows.Forms.LinkLabel();
-            this.helplink = new System.Windows.Forms.LinkLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
@@ -71,6 +70,7 @@
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(495, 24);
             this.menuStrip.TabIndex = 0;
+            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -98,7 +98,7 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
@@ -113,7 +113,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -183,6 +183,7 @@
             this.statusStrip.Size = new System.Drawing.Size(495, 22);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
+            this.statusStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip_ItemClicked);
             // 
             // currentSonglb
             // 
@@ -253,7 +254,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 162);
-            this.Controls.Add(this.helplink);
             this.Controls.Add(this.playerLink);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toggle);
@@ -267,7 +267,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
-            this.Opacity = 0D;
+            this.ShowIcon = false;
             this.Text = "The Music Displayer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
@@ -300,7 +300,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label infolb;
         private System.Windows.Forms.LinkLabel playerLink;
-        private System.Windows.Forms.LinkLabel helplink;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;

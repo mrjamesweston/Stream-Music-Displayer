@@ -30,4 +30,9 @@
     <Type>Pandora</Type>
     <Enabled>true</Enabled>
   </Player>
+  <Player>
+    <Name>*Bandcamp</Name>
+    <Type>Bandcamp</Type>
+    <Enabled>true</Enabled>
+  </Player>
 </PlayerList>

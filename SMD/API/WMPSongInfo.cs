@@ -61,7 +61,7 @@ namespace SMD.API
             }
             catch (Exception e)
             {
-                return new Song("Error Loading Track Infromation");
+                return new Song("Error Loading Track Information");
             }
         }
 

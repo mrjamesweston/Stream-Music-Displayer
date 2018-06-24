@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Xml.Serialization;
+using AutoUpdaterDotNET;
 
 namespace SMD
 {
@@ -221,6 +222,9 @@ namespace SMD
                 case MusicPlayers.WindowsMP:
                     Process.Start("wmplayer");
                     break;
+                case MusicPlayers.Bandcamp:
+                    Process.Start("http://www.bandcamp.com");
+                    break;
             }
             }
             catch (Exception ex) {MessageBox.Show("Could not start " + currentPlayer.Type.ToString()); }
@@ -308,6 +312,16 @@ namespace SMD
                 if(p.Enabled)
                 PlayerSelect.Items.Add(p.Name);
             }
+        }
+
+        private void statusStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
