@@ -28,5 +28,20 @@ namespace SMD
         {
             Process.Start("http://www.twitch.tv/digipixel_io");
         }
+
+        private void verlib_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

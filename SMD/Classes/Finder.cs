@@ -269,14 +269,6 @@ namespace SMD
                 //
                 //Custom APIs
                 //
-                case MusicPlayers.iTunes:
-                    p = getProcess(player);
-                    if (p.Player != MusicPlayers.None)
-                    {
-                        API.iTunes info = new API.iTunes();
-                        song =  info.GetCurrentPlayingSong();
-                    }
-                    break;
                 case MusicPlayers.Nightbot:
 
                     break;

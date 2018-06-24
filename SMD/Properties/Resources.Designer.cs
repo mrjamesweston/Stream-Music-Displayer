@@ -74,22 +74,22 @@ namespace SMD.Properties {
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
         ///&lt;PlayerList xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
         ///  &lt;Player&gt;
-        ///    &lt;Nmae&gt;Foobar2000&lt;/Nmae&gt;
+        ///    &lt;Name&gt;Foobar2000&lt;/Name&gt;
         ///    &lt;Type&gt;Foobar2000&lt;/Type&gt;
         ///    &lt;Enabled&gt;true&lt;/Enabled&gt;
         ///  &lt;/Player&gt;
         ///  &lt;Player&gt;
-        ///    &lt;Nmae&gt;AIMP3&lt;/Nmae&gt;
+        ///    &lt;Name&gt;AIMP3&lt;/Name&gt;
         ///    &lt;Type&gt;AIMP3&lt;/Type&gt;
         ///    &lt;Enabled&gt;true&lt;/Enabled&gt;
         ///  &lt;/Player&gt;
         ///  &lt;Player&gt;
-        ///    &lt;Nmae&gt;Winamp&lt;/Nmae&gt;
+        ///    &lt;Name&gt;Winamp&lt;/Name&gt;
         ///    &lt;Type&gt;Winamp&lt;/Type&gt;
         ///    &lt;Enabled&gt;true&lt;/Enabled&gt;
         ///  &lt;/Player&gt;
         ///  &lt;Player&gt;
-        ///    &lt;Nmae&gt;VLC&lt;/Nmae&gt;
+        ///    &lt;Name&gt;VLC&lt;/Name&gt;
         ///    &lt;Type&gt;VLC&lt;/Type&gt;
         ///   [rest of string was truncated]&quot;;.
         /// </summary>

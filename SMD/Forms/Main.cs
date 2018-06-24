@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
@@ -65,7 +58,7 @@ namespace SMD
             this.Visible = false;
             if (notify_st)
             {
-                notify("Stream Music Displayer was minimised to system tray, click the icon to restore it.");
+                notify("The Music Displayer was minimized to your system tray, click the icon to restore it.");
                 notify_st = false;
             }
         }
@@ -173,22 +166,6 @@ namespace SMD
 
             switch (currentPlayer.Type)
             {
-                case MusicPlayers.Foobar2000:
-                    infolb.Text = "Shows song playing in Foobar2000.";
-                    playerLink.Text = "Open Foobar2000";
-                    break;
-                case MusicPlayers.AIMP3:
-                    infolb.Text = "Shows song playing in AIMP3.";
-                    playerLink.Text = "Open AIMP3";
-                    break;
-                case MusicPlayers.MediaMonkey:
-                    infolb.Text = "Shows song playing in Media Monkey.";
-                    playerLink.Text = "Open MediaMonkey";
-                    break;
-                case MusicPlayers.MPC:
-                    infolb.Text = "Shows song playing in Media Player Classic Home Cinema (mpc-hc).";
-                    playerLink.Text = "Open mpc-hc";
-                    break;
                 case MusicPlayers.Winamp:
                     infolb.Text = "Shows song playing in Winamp.";
                     playerLink.Text = "Open Winamp";
@@ -200,10 +177,6 @@ namespace SMD
                 case MusicPlayers.Spotify:
                     infolb.Text = "Shows song playing in Spotify.";
                     playerLink.Text = "Open Spotify";
-                    break;
-                case MusicPlayers.Grooveshark:
-                    infolb.Text = "Shows song playing in Grooveshark. Must be active tab in Chrome or Firefox and requires applet to run correctly.";
-                    playerLink.Text = "Open Grooveshark";
                     break;
                 case MusicPlayers.Youtube:
                     infolb.Text = "Shows song playing in Youtube. Must be active tab in Chrome or Firefox and requires applet to run correctly.";
@@ -217,38 +190,6 @@ namespace SMD
                     infolb.Text = "Shows song playing in Pandora. Must be active tab in Chrome or Firefox and requires applet to run correctly.";
                     playerLink.Text = "Open Pandora";
                     break;
-                case MusicPlayers.Plug:
-                    infolb.Text = "Shows song playing in Plug. Must be active tab in Chrome or Firefox and requires applet to run correctly.";
-                    playerLink.Text = "Open Plug";
-                    break;
-                case MusicPlayers.Zaycev:
-                    infolb.Text = "Shows song playing in Zaycev. Must be active tab in Chrome or Firefox and requires applet to run correctly.";
-                    playerLink.Text = "Open Zaycev";
-                    break;
-                case MusicPlayers.EightTracks:
-                    infolb.Text = "Shows song playing in 8Tracks. Must be active tab in Chrome or Firefox and requires applet to run correctly.";
-                    playerLink.Text = "Open 8Tracks";
-                    break;
-                case MusicPlayers.iTunes:
-                    infolb.Text = "Shows song playing in iTunes.";
-                    playerLink.Text = "Open iTunes";
-                    break;
-                case MusicPlayers.Nightbot:
-                    infolb.Text = "Shows song playing in Nightbot.";
-                    playerLink.Text = "Open Nightbot";
-                    break;
-                case MusicPlayers.Zune:
-                    infolb.Text = "Shows song playing in Zune.";
-                    playerLink.Text = "Open Zune";
-                    break;
-                case MusicPlayers.Jriver:
-                    infolb.Text = "Shows song playing in Jriver Media Center.";
-                    playerLink.Text = "Open Jriver Media Center";
-                    break;
-                case MusicPlayers.WindowsMP:
-                    infolb.Text = "Shows song playing in Windows Media PPlayer. ";
-                    playerLink.Text = "Open Windows Media Player";
-                    break;
             }
         }
 
@@ -259,18 +200,6 @@ namespace SMD
             
             switch (currentPlayer.Type)
             {
-                case MusicPlayers.Foobar2000:
-                    Process.Start("Foobar2000");
-                    break;
-                case MusicPlayers.AIMP3:
-                    Process.Start("AIMP3");
-                    break;
-                case MusicPlayers.MediaMonkey:
-                    Process.Start("MediaMonkey");
-                    break;
-                case MusicPlayers.MPC:
-                    Process.Start("mpc-hc");
-                    break;
                 case MusicPlayers.Winamp:
                     Process.Start("Winamp");
                     break;
@@ -279,9 +208,6 @@ namespace SMD
                     break;
                 case MusicPlayers.Spotify:
                     Process.Start("spotify");
-                    break;
-                case MusicPlayers.Grooveshark:
-                    Process.Start("http://grooveshark.com/");
                     break;
                 case MusicPlayers.Youtube:
                     Process.Start("https://www.youtube.com/");
@@ -292,27 +218,6 @@ namespace SMD
                 case MusicPlayers.Pandora:
                     Process.Start("http://www.pandora.com/");
                     break;
-                case MusicPlayers.Plug:
-                    Process.Start("https://plug.dj/");
-                    break;
-                case MusicPlayers.Zaycev:
-                    Process.Start("http://www.zaycev.fm/");
-                    break;
-                case MusicPlayers.EightTracks:
-                    Process.Start("http://8tracks.com/");
-                    break;
-                case MusicPlayers.iTunes:
-                    Process.Start("iTunes");
-                    break;
-                case MusicPlayers.Nightbot:
-                    Process.Start("Nightbot");
-                    break;
-                case MusicPlayers.Zune:
-                    Process.Start("Zune");
-                    break;
-                case MusicPlayers.Jriver:
-                    Process.Start("Jriver");
-                    break;
                 case MusicPlayers.WindowsMP:
                     Process.Start("wmplayer");
                     break;
@@ -321,18 +226,10 @@ namespace SMD
             catch (Exception ex) {MessageBox.Show("Could not start " + currentPlayer.Type.ToString()); }
         }
 
-        private void helplink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                Process.Start("https://obsproject.com/forum/resources/stream-music-displayer.107/");
-            }
-            catch (Exception ex) { }
-        }
 
         private void notify(string text)
         {
-            notifyIcon.BalloonTipTitle = "Stream Music Displayer";
+            notifyIcon.BalloonTipTitle = "The Music Displayer";
             notifyIcon.BalloonTipText = text;
             notifyIcon.ShowBalloonTip(1000);
         }
