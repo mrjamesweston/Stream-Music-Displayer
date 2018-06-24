@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Xml.Serialization;
-using AutoUpdaterDotNET;
 
 namespace SMD
 {
@@ -190,6 +189,10 @@ namespace SMD
                 case MusicPlayers.Pandora:
                     infolb.Text = "Shows song playing in Pandora. Must be active tab in Chrome or Firefox and requires applet to run correctly.";
                     playerLink.Text = "Open Pandora";
+                    break;
+                case MusicPlayers.Bandcamp:
+                    infolb.Text = "Shows song playing in Bandcamp. Must be active tab in Chrome or Firefox and requires applet to run correctly.";
+                    playerLink.Text = "Open Bandcamp";
                     break;
             }
         }

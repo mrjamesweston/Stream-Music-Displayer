@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Net;
-using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using AutoUpdaterDotNET;
 
 namespace SMD
 {
@@ -32,7 +30,7 @@ namespace SMD
 
             foreach (Player p in Plist.Players)
             {
-                if(p.Enabled)
+                if (p.Enabled)
                     enabledList.Items.Add(p.Name);
                 else
                     disabledList.Items.Add(p.Name);
@@ -65,7 +63,7 @@ namespace SMD
                         i.Name = Plr.Name;
                         i.Type = Plr.Type;
                         i.Enabled = false;
-                        
+
                         NewList.Players.Add(i);
                     }
                 }
@@ -156,5 +154,8 @@ namespace SMD
 
         private void updatesBtn_Click(object sender, EventArgs e)
         {
-            AutoUpdater.Start("http://rbsoft.org/updates/AutoUpdaterTest.xml");
+            AutoUpdater.Start("https://raw.githubusercontent.com/mrjamesweston/The-Music-Displayer/master/SMD/AutoUpdater.xml");
+            AutoUpdater.OpenDownloadPage = true;
         }
+    }
+}
