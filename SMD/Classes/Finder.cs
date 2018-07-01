@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace SMD
 {
@@ -108,6 +104,20 @@ namespace SMD
                         Regex r = new Regex(@"(?<=Pandora - )(.*?) - (.*?) -", RegexOptions.IgnoreCase | RegexOptions.Singleline);
                         Match m = r.Match(p.Title);
                         
+                        if (m.Success)
+                        {
+                            song = new Song(m.Groups[2].ToString().Replace("  ", ""), m.Groups[1].ToString().Replace("  ", ""));
+                        }
+                    }
+                    break;
+                //Bandcamp
+                case MusicPlayers.Bandcamp:
+                    p = getProcess(player);
+                    if (p.Player != MusicPlayers.None)
+                    {
+                        Regex r = new Regex(@"(?<=Bandcamp - )(.*?) - (.*?) -", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                        Match m = r.Match(p.Title);
+
                         if (m.Success)
                         {
                             song = new Song(m.Groups[2].ToString().Replace("  ", ""), m.Groups[1].ToString().Replace("  ", ""));
